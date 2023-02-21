@@ -76,24 +76,41 @@ export default function JogoEscolha({
         )
         
     }
+    const goPergunta = ()=>{
+        setvVlorinp("")
+        setQuestionNumber((prev)=> prev + 1)
+        setSelectedAnswer(null)
+        setVerText("")
+    }
     
   return (
     <div className='escoContent'>
         <div className="conteinerEsc">
-            <div className="perguntacont">
-                <p className="pergunta">{question?.question  +verText}</p>
+            <div className={question?.tipo === "img" ? "newNone" : "perguntacont"} >
+                <p className={question?.tipo === "img" ? "newNone" : "pergunta"}>{question?.question  +verText}</p>
             </div>
-            {question?.tipo === "button" ? (
+            {question?.tipo === "button" && (
                 <div className="answers">
                     {question?.resposta.map((a) => (
                         <div key={a.text} className={selectedAnswer === a ? className : "answer"} onClick={()=> handleClick(a)}>{a?.text}</div>
                     ))}
                 </div>
-            ):(
+            )}
+            {question?.tipo === "input" &&(
                 <div className="respostaEscolha">
                     <input type="text" onChange={(e)=>setvVlorinp(e.target.value)} className="inpTextEscolha" />
                     <button className="Proximo" onClick={()=>handleClickInput(valorinp)}>Next</button>
                 </div>
+            )}
+            {question?.tipo === "img" &&(
+                <>
+                    <img src={question.url} alt="" className="contImg" />
+                    <div className="buttonNext">
+                        <div className="btn">
+                            <button className="next" onClick={goPergunta}>Next</button>
+                        </div>
+                    </div>
+                </>
             )}
         </div>
     </div>

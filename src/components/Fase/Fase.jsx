@@ -106,6 +106,18 @@ export default function Fase() {
               correct: false,
             },
           ],
+        },
+        {
+          id: 6,
+          question: "Declare uma variável do tipo realC, com o nome Aluno e com valor 100.20",
+          tipo: "img",
+          url: "./fase1.png",
+          resposta: [
+            {
+              text: "floatAluno=100.20;",
+              correct: true,
+            },
+          ],
         }
     ]
 
