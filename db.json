@@ -1,0 +1,73 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "nome": "Miti",
+      "senha": "123",
+      "pontuaao": 0
+    },
+    {
+      "id": 2,
+      "nome": "Mitilson",
+      "senha": "1234",
+      "pontuaao": 7
+    },
+    {
+      "nome": "Mitir",
+      "senha": "123",
+      "id": 3
+    },
+    {
+      "nome": "Mariano",
+      "senha": "123",
+      "id": 4
+    },
+    {
+      "nome": "Peralta",
+      "senha": "123",
+      "id": 5
+    }
+  ],
+  "fases": [
+    {
+      "id": 1,
+      "img": "./fase1.png"
+    },
+    {
+      "id": 2,
+      "img": "./fase1.png"
+    }
+  ],
+  "perguntas": [
+    {
+      "id": 1,
+      "idfase": 1,
+      "title": "O que é uma Linguagem de Programação?",
+      "tipo": "button",
+      "resposta1": "Linguagem de Computador",
+      "resposta2": "Linguagem Humana",
+      "resposta3": "Linguagem Humana",
+      "resposta4": "Linguagem de Alto Nível",
+      "certo": "Linguagem Humana"
+    },
+    {
+      "id": 2,
+      "idfase": 1,
+      "title": "Digite sem espaço a palavra que simboliza o tipo inteiro em C.",
+      "tipo": "input",
+      "respostas": "int",
+      "certo": "int"
+    },
+    {
+      "id": 3,
+      "idfase": 1,
+      "title": "Como declarar uma Variável do tipo inteiro?",
+      "tipo": "button",
+      "resposta1": "Int x",
+      "resposta2": "Inteiro x",
+      "resposta3": "int x",
+      "resposta4": "inteiro x",
+      "certo": "int x"
+    }
+  ]
+}
