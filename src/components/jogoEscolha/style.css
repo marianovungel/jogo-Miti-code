@@ -194,3 +194,60 @@
     background-color: rgba(250, 114, 114, 0.559);
   }
   
+  .cardFim{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
+  }
+  .textFim{
+    width: 100%;
+    height: 70px;
+    border: none;
+    border: 1px solid #999;
+    box-shadow: 1px 1px 1px 1px #999;
+    color: #666;
+    display: flex;align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 30px;
+  
+  }
+  .fontSizeIcom{
+    font-size: 15pt;
+  }
+  .jogarNovament{
+    margin-top: 30px;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(#22074d, #1C315E);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16pt;
+    border: none;
+    box-shadow: 1px 1px 1px 1px #999;
+    border-radius: 10px;
+    
+  }
+  .colorBorder{
+    color: greenyellow;
+    font-size: 16pt;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .colorBorderRed{
+    color: rgb(238, 123, 123);
+    font-size: 16pt;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .jogarNovament:hover{
+    background: linear-gradient( #1C315E, #22074d);
+    color: #999;
+    transition: 0.3s;
+    cursor: pointer;
+  }

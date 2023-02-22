@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import './style.css'
 
@@ -12,19 +11,35 @@ export default function JogoEscolha({
 
     const [question, setQuestion] = useState(null)
     const [valorinp, setvVlorinp] = useState(null)
-    const [ver, setVer] = useState(false)
+    const [erros, seterros] = useState(0)
+    const [fim, setFim] = useState(true)
+    const [acertos, setAcertos] = useState(0)
     const [verText, setVerText] = useState("")
     const [className, setClassName] = useState("answer")
     const [selectedAnswer, setSelectedAnswer] = useState(null)
 
     useEffect(()=>{
         setQuestion(data[questionNumber-1]);
+        if(questionNumber===12){
+            setFim(false)
+        }
     }, [data, questionNumber])
 
     const delay = (duration, callback)=>{
         setTimeout(()=>{
             callback()
         }, duration)
+    }
+    const newGame = ()=>{
+        window.location.reload()
+        setQuestion(null)
+        setvVlorinp(null)
+        seterros(0)
+        setFim(true)
+        setAcertos(0)
+        setVerText("")
+        setClassName("answer")
+        setSelectedAnswer(null)
     }
 
     const handleClick = (a)=>{
@@ -39,11 +54,14 @@ export default function JogoEscolha({
                     setVerText("😘")
                     delay(1000, ()=>{
                         setQuestionNumber((prev)=> prev + 1)
+                        setAcertos((prev)=> prev + 1)
+                        
                         setSelectedAnswer(null)
                         setVerText("")
                     })
                 }else{
                     setVerText("😓")
+                    seterros((prev)=> prev + 1)
                 }
             }
         )
@@ -53,9 +71,7 @@ export default function JogoEscolha({
         setSelectedAnswer(a)
         setVerText("")
         setClassName("answer active")
-        console.log(a)
         var valorCheck = a.replace(/ /g, '');
-        console.log(valorCheck)
         
         delay(500, ()=> 
             setClassName(valorCheck === question.resposta[0].text ? "answer correct" : "answer wrong"))
@@ -66,11 +82,13 @@ export default function JogoEscolha({
                     delay(1000, ()=>{
                         setvVlorinp("")
                         setQuestionNumber((prev)=> prev + 1)
+                        setAcertos((prev)=> prev + 1)
                         setSelectedAnswer(null)
                         setVerText("")
                     })
                 }else{
                     setVerText("😓")
+                    seterros((prev)=> prev + 1)
                 }
             }
         )
@@ -85,7 +103,7 @@ export default function JogoEscolha({
     
   return (
     <div className='escoContent'>
-        <div className="conteinerEsc">
+        {fim ? ( <div className="conteinerEsc">
             <div className={question?.tipo === "img" ? "newNone" : "perguntacont"} >
                 <p className={question?.tipo === "img" ? "newNone" : "pergunta"}>{question?.question  +verText}</p>
             </div>
@@ -113,6 +131,13 @@ export default function JogoEscolha({
                 </>
             )}
         </div>
+        ):(
+            <div className="cardFim">
+                <p className="textFim">Você Acertou  <b className='colorBorder'>{acertos}</b> <span className='fontSizeIcom'>👌</span></p>
+                <p className="textFim">Você Errou  <b className='colorBorderRed'>{erros}</b> <span className='fontSizeIcom'>🤦</span></p>
+                <button className='jogarNovament' onClick={newGame}>Jogar Novamente</button>
+            </div>
+        )}
     </div>
   )
 }
