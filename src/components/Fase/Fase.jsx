@@ -237,6 +237,7 @@ export default function Fase() {
 
   return (
     <div className="con">
+      
         {show ? (
             <>
             <img src={img} alt="" className="contImg" />
