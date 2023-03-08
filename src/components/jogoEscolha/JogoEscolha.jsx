@@ -3,7 +3,6 @@ import './style.css'
 
 export default function JogoEscolha({
     data,
-    // setStop,
     questionNumber,
     setQuestionNumber,
 }) {
@@ -30,7 +29,9 @@ export default function JogoEscolha({
             callback()
         }, duration)
     }
+
     const newGame = ()=>{
+        
         window.location.reload()
         setQuestion(null)
         setvVlorinp(null)
@@ -48,7 +49,7 @@ export default function JogoEscolha({
         setClassName("answer active")
         delay(500, ()=> 
             setClassName(a.correct ? "answer correct" : "answer wrong"))
-        delay(4000, ()=> 
+        delay(3000, ()=> 
             {
                 if(a.correct){
                     setVerText("😘")
@@ -75,7 +76,7 @@ export default function JogoEscolha({
         
         delay(500, ()=> 
             setClassName(valorCheck === question.resposta[0].text ? "answer correct" : "answer wrong"))
-        delay(4000, ()=> 
+        delay(3000, ()=> 
             {
                 if(valorCheck === question.resposta[0].text){
                     setVerText("😘")

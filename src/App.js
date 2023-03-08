@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {useCookies} from 'react-cookie'
 
+
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['user'])
   const user = cookies.nome;

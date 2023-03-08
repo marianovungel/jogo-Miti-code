@@ -1,10 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useCookies } from 'react-cookie'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './style.css'
 
 export default function Cadastrar() {
+  //declaração de variáveis com useState
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [text, setText] = useState("")
@@ -34,10 +35,9 @@ export default function Cadastrar() {
         setText("já Existe Usuário Com Este Nome 😩")
         setCor("red")
       }else{
-        console.log("Pode cadastrar novo usuário!")
         saveUse()
         setShowText(true)
-        setText("já Existe Usuário Com Este Nome 👌")
+        setText("Usuário Cadastrado com Sucesso 👌")
         setCor("verde")
         setTimeout(()=>{
           navigate('/')
@@ -54,11 +54,26 @@ export default function Cadastrar() {
         <form className='login' onSubmit={SetLogin}>
             <img src="./logo.png" alt="" className="logo" />
             <h3 className="loginText">Cadastrar</h3>
-            <input type="text" className="nome" placeholder='Usuário' onChange={(e)=>setUsername(e.target.value)} minLength="2" required />
-            <input type="password" className="email" placeholder='Senha' onChange={(e)=>setPassword(e.target.value)} minLength="2" required />
+            <input 
+              //tipo de valor que o input admite
+              type="text"
+              className="nome" 
+              placeholder='Usuário' 
+              onChange={(e)=>setUsername(e.target.value)}
+              minLength="2" 
+              required 
+              />
+            <input 
+              type="password" 
+              className="email" 
+              placeholder='Senha' 
+              onChange={(e)=>setPassword(e.target.value)} 
+              minLength="2" 
+              required
+            />
             <button className='ButtonEntrar' type='onsubmit'>Cadastrar</button>
             <div className="criarText">
-                <h6 className="texx">Login</h6>
+                <Link to='/' className="texx">Login</Link>
                 <h6 className="termos">Termos & Políticas de Uso.</h6>
             </div>
         </form>

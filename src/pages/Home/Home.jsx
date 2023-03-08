@@ -19,9 +19,9 @@ export default function Home() {
             <div className="vazia"></div>
             <div className="menu">
                 <Link to="/home" className="jogar">Home</Link>
+                <Link to="/jogar" className="jogar">Jogar</Link>
                 <li className="jogar">Instruções</li>
                 <li className="jogar" onClick={Logout}>Logout</li>
-                <Link to="/jogar" className="jogar">Jogar</Link>
             </div>
         </div>
         <div className="section">

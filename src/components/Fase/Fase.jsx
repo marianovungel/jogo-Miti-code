@@ -8,12 +8,7 @@ export default function Fase() {
     const [nfase, setNfase] = useState(0)
     const [img, setImg] = useState("")
     const [fase, setFase] = useState([])
-
     const [questionNumber, setQuestionNumber] = useState(1)
-
-//     useEffect(()=>{
-//     questionNumber > 1 && setEarner(moneyPyramid.find(m=> m.id === questionNumber - 1).amount)
-//   }, [ questionNumber])
 
     const data = [
         {
@@ -51,7 +46,7 @@ export default function Fase() {
           ],
         },
         {
-          id: 1,
+          id: 3,
           question: "Como declarar uma Variável do tipo inteiro?",
           tipo: "button",
           resposta: [
@@ -109,12 +104,12 @@ export default function Fase() {
         },
         {
           id: 6,
-          question: "Declare uma variável do tipo realC, com o nome Aluno e com valor 100.20",
+          question: "",
           tipo: "img",
           url: "./fase2.png",
           resposta: [
             {
-              text: "floatAluno=100.20;",
+              text: "",
               correct: true,
             },
           ],
