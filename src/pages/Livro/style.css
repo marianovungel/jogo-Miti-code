@@ -1,0 +1,44 @@
+.cardAvv{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.cardBb{
+    width: 220px;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0px 20px 20px 0px;
+}
+.imgCardBb{
+    width: 220px;
+    height: 220px;
+}
+.textTitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.textSecB{
+    flex: 9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ler, .lermaistard{
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 127, 127);
+    margin-right: 30px;
+    margin-top: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}

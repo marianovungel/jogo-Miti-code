@@ -1,42 +1,123 @@
-import React, { useEffect } from 'react'
-import { useCookies } from 'react-cookie'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react'
 import './style.css'
+import Header from '../../components/Header/Header'
+import Menu from '../../components/Menu/Menu'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Home() {
-    const [cookies, setCookie, removeCookie] = useCookies(['user'])
-    let navigate = useNavigate()
-    const Logout = async()=>{
-        await removeCookie('nome', cookies.nome)
-        await removeCookie('senha', cookies.senha)
-        navigate('/')
-        window.location.reload()
-    }
+
+    const [lido, setLido] = useState()
+    const [ler, setLer] = useState()
+
+    useEffect(()=>{
+        const SetValors = ()=>{
+            setLido(130)
+            setLer(60)
+        }
+
+        SetValors()
+    }, [])
+
+    const data = [
+        {
+            id: "1",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "12",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "3",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "4",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "5",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "6",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "7",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+        {
+            id: "8",
+            img: "https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg",
+            estrela: "⭐⭐⭐⭐⭐"
+        },
+    ]
+    
   return (
     <div className='contairerHome'>
-        <div className="header">
-            <div className="vazia"></div>
-            <div className="vazia"></div>
-            <div className="menu">
-                <Link to="/home" className="jogar">Home</Link>
-                <Link to="/jogar" className="jogar">Jogar</Link>
-                <li className="jogar">Instruções</li>
-                <li className="jogar" onClick={Logout}>Logout</li>
+        <Header lido={lido} ler={ler} />
+        <div className="minhas">
+            <div className="vazioSection"></div>
+            <div className="textSec">
+                <p className="textsecminha">Minha Estante</p>
             </div>
         </div>
-        <div className="section">
-            <div className="heroImg">
-                <img src="./3839214.jpg" alt="" className="hero" />
+        <div className="favoritsContainer">
+            <div className="menuCom"><Menu /></div>
+            <div className="CardCom">
+                {data.map((db)=>(
+
+                    <Link to='/livro' className="card" key={db.id}>
+                        <img className='imgCard' src={db.img} alt="" />
+                        <span>{db.estrela}</span>
+                    </Link>
+                ))}
             </div>
-            <div className="textHome">
-                <h1 className="textMain">Miti Code</h1>
-                <p className="textFiirst">Lorem ipsum dolor sit
-                 amet consectetur, adipisicing elit. Tempore 
-                 placeat sequi veritatis possimus! Est dolorem 
-                 7distinctio libero, quibusdam nam dignissimos 
-                 voluptatibus iusto atque ab 
-                rem cumque praesentium aspernatur itaque sunt.</p>
-                <button className="jogarNovamente"><Link to="/jogar" className='colorButt'>Jogar</Link></button>
+        </div>
+        <div className="minhas">
+            <div className="vazioSection"></div>
+            <div className="textSec">
+                <p className="textsecminha">Últimas Avaliações</p>
+            </div>
+        </div>
+        <div className="livrostext">
+            <div className="cardAv">
+                <div className="cardB">
+                    <img className='imgCardB' src="https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg" alt="" />
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+                <div className="texx">
+                    <h3 className="textTitle">Título da Resenha</h3>
+                    <p className="textPlorem">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Quos earum commodi quasi ex adipisci. Amet facere
+                        magni vel eos quia illo aperiam.
+                    </p>
+                </div>
+            </div>
+            <div className="cardAv">
+                <div className="cardB">
+                    <img className='imgCardB' src="https://img.freepik.com/fotos-gratis/paisagem-de-nevoeiro-matinal-e-montanhas-com-baloes-de-ar-quente-ao-nascer-do-sol_335224-794.jpg" alt="" />
+                    <span>⭐⭐⭐⭐</span>
+                </div>
+                <div className="texx">
+                    <h3 className="textTitle">Título da Resenha</h3>
+                    <p className="textPlorem">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Quos earum commodi quasi ex adipisci. Amet facere
+                        magni vel eos quia illo aperiam.
+                    </p>
+                </div>
             </div>
         </div>
     </div>

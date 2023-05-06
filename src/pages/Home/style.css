@@ -1,102 +1,87 @@
 .contairerHome{
-    width: 100%;
+    width: 87%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0px;
+    margin: 0px auto 0px auto;
     padding: 0px;
     /* margin-top: 100px; */
 }
-.header{
+.minhas{
     width: 100%;
-    height: 68px;
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    background-color: #1C315E;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    border-bottom: 1px solid #1c315eb2;
-    box-shadow: 1px 1px 1px 1px #1c315e56;
+    justify-content: space-between;
 }
-.vazia{
-    flex: 4;
+.vazioSection{
+    flex: 3;
 }
-.menu{
-    flex: 4;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+.textSec{
+    flex: 9;
 }
-.jogar{
-    list-style: none;
-    color: #fff;
-    cursor: pointer;font-weight: 600;
-    font-size: 1.1rem;
+.textsecminha{
+    font-size: 1.5rem;
 }
-.jogar:hover{
-    color: #999;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.section{
+.favoritsContainer{
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.menuCom{
+    flex: 3;
+    
+}
+.CardCom{
+    flex: 9;
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    align-items: center;
 }
-.heroImg{
-    flex: 6;
-    display: flex;
-    justify-content: center;
-}
-.hero{
-    width: 80%;
-    margin-top: 10px;
-}
-.textHome{
-    flex: 6;
+.card{
+    width: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-.textMain{
-    font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 30px;
-    font-family: sans-serif;
-}
-.textFiirst{
-    width: 70%;
-    font-family: sans-serif;
-    text-align: justify;
-    line-height: 35px;
-}
-.jogarNovamente{
-    width: 70%;height: 40px;
-    display: flex;
     align-items: center;
+    margin: 0px 20px 20px 0px;
+}
+.cardB{
+    width: 100px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.2rem;
-    background-color: #1C315E;
-    border: none;
-    border: 1px solid #999;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 1px 1px #D9D9D9;
+    align-items: stretch;
+    margin: 0px 20px 20px 0px;
+    
 }
-.jogarNovamente:hover{
-    color: #666;
-    transition: 0.3s;
+.cardAv{
+    background-color: rgb(235, 123, 123);
 }
-.colorButt{
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
+.imgCard{
+    width: 200px;
+    height: 200px;
+}
+.imgCardB{
+    width: 100px;
+    height: 100px;
+}
+.livrostext{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.cardAv{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
